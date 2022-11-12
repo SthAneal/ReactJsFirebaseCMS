@@ -1,3 +1,11 @@
+## A Quick Note
+
+It is a part of an ongoing project supposed to be an open-source. It is a simple content management system for a website. It can facilitate to have dynamic structure of combination of page, nav page, image, and links as per a website's need. 
+
+Please feel free to use the source code.
+
+For the firebase configuration (firebase.js), please use the configuration based on your firebase app.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
