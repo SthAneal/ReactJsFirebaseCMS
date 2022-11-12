@@ -1,0 +1,379 @@
+$dark-blue: #17044b;
+$mix-blue: #3c3158; // for box-shadow
+$pink-blue: #901cf5; // bluish font
+$bright-pink-blue:#3e0778; // header background of data-table
+$shade-blue: #34206b; // tab-capsule
+$pure-white: #ffffff;
+$dirty-white: #cfcfcf;
+$soft-white: #f7f7f7; // label background
+$error:red;
+$success: green;
+.dashboard {
+    background: radial-gradient(74.71% 39.98% at 49.97% 100%, rgba(102, 0, 183, 0.72) 0%, rgba(12, 53, 115, 0) 100%), radial-gradient(63.34% 63.34% at 50% 36.66%, rgba(58, 0, 183, 0.72) 0%, rgba(12, 53, 115, 0) 100%), rgb(19, 10, 42);
+    color: #fff;
+    // padding: 50px 0;
+}
+
+// define style for class authentication
+.authentication{
+    padding:15px;
+    overflow-y: scroll;
+}
+
+// define style for Authentication Tab
+.tab {
+    // padding: 15px;
+    background-color: $dark-blue;
+    // box-shadow: 0px 0px 7px 1px #3c3158;
+    border-radius: 5px;
+
+    &__capsule {
+        padding: 10px;
+        background-color: $shade-blue;
+        border: 1px solid $shade-blue;
+        font-weight: 300;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &--selected,
+        &:hover {
+            color: $dirty-white;
+            border-bottom: 1px solid $pink-blue;
+        }
+
+        &:first-child {
+            border-radius: 4px 0 0 0;
+        }
+
+        &:last-child {
+            border-radius: 0 4px 0 0;
+        }
+    }
+
+    &__body {
+        padding: 50px 15px 15px;
+        background-color: $pure-white;
+        border-radius: 0 0 4px 4px;
+        &--sec{
+            &-hide{
+                display: none !important;
+            }
+            &-form{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+                align-items: center;
+            }
+        }
+    }
+}
+
+// define style for error message
+.error-message{
+    color: $error;
+}
+
+// define style for Input component
+.input-wrapper{
+    border: 1px solid $dirty-white;
+    border-radius: 4px;
+    & > label:not(.sub-label){
+        border-bottom: 1px solid $dirty-white;
+        padding: 5px;
+        width: 100%;
+        font-size: 0.7rem;
+        color: $shade-blue;
+        font-weight: 500;
+        border-radius: 4px 4px 0 0;
+        background-color: $soft-white;
+        & .error-message{
+            @extend .error-message;
+            margin-left: 12px;
+            float: right;
+        }
+        &>span:first-child.required{
+            &::after{
+                content: '*';
+                color: $error;
+                margin-left: 5px;
+            }    
+        }
+    }
+    & > input, & > select{
+        padding: 5px;
+        border-radius: 0 0 3px 3px;
+        border: none;
+        height: 35px;
+        width: 100%;
+        font-size: 1rem;
+        &:focus, &:active{
+            outline: 1px solid $shade-blue;
+        }
+    }
+
+    .parentPageSelect > option{
+        font-size: 0.4rem;
+        color: red;
+    }
+
+    &__image .sub-label{
+        padding:5px 10px;
+        font-weight:500;
+        border:1px solid $dirty-white;
+        border-radius:4px;
+        cursor:pointer;
+        background: $pure-white;
+        color: #000;
+        font-size: 0.7rem;
+        &:hover{
+            background: $dirty-white;
+        }
+        &:focus,:active{
+            outline: 1px solid $pink-blue;
+        }
+    }
+
+}
+
+
+// define style for Button component.
+button{
+    cursor: pointer;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.83rem;
+    font-family: 'Poppins', sans-serif;
+    
+    &:disabled{
+        cursor: not-allowed;
+    }
+    &.sm{
+        padding: 5px 10px;
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+    &.md{
+        padding: 8px 16px;
+        font-size: 0.76rem;
+        font-weight: 500;
+    }
+    &.contained{
+        border: 1px solid $dark-blue;
+        box-shadow: 0px 0px 5px 0px $mix-blue;
+        border-radius: 4px;
+        &.primary{
+            background-color: $dark-blue;
+            color: $dirty-white;
+            &:hover{
+                background-color: $shade-blue;
+            }
+        }
+        &.secondary{
+            background-color: $pure-white;
+            color: $dark-blue;
+            &:hover{
+                background-color: $dirty-white;
+            }
+        }
+        &:hover{
+            box-shadow: 0px 0px 5px 1px $mix-blue;
+        }
+    }
+    &.outlined{
+        border: none;
+        // box-shadow: 0px 0px 5px 0px $mix-blue;
+        box-shadow: 0px 0px 4px -2px $pink-blue;
+        border-radius: 4px;
+        background-color: transparent;
+        &:hover{
+            box-shadow:  0px 0px 4px 1px $mix-blue;
+        }
+        &.primary{
+            // background-color: $dirty-white;
+            color: $pink-blue;
+        }
+        &.secondary{
+            // background-color: $dirty-white;
+            color: $dark-blue;
+        }
+    }
+    &.text{
+        border: none;
+        background-color: transparent;
+        width: fit-content !important;
+        text-decoration: underline;
+        &.primary{
+            color: $pink-blue;
+            &:hover{
+                color: $dark-blue;
+            }
+        }
+        &.secondary{
+            color: $dirty-white;
+            &:hover{
+                color: $mix-blue;
+            }
+        }
+    }
+}
+
+.terms-condition{
+    color: $shade-blue;
+}
+
+// styling for Create New Page
+
+.create-new-page__form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+// editor area of quill editor
+.ql-toolbar{
+    background-color: $soft-white;
+}
+.ql-editor{
+    min-height: 200px;
+}
+
+.created-pages{
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.side-menu{
+    & a{
+        color: $dirty-white;
+        text-decoration: none;
+        &:hover{
+            color: $soft-white;
+        }
+    }
+}
+
+//data-table escape hatch
+.rdt_TableHeader{
+    background-color: $bright-pink-blue !important;
+    border-radius: 4px 4px 0 0;
+    &>div:first-child{
+        display: block;
+        font-size: 0.9rem;
+        margin-block-start: 1rem;
+        margin-block-end: 1rem;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        color: $pure-white;
+    }
+}
+
+.rdt_TableCol{
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+// delete button on data-table
+.page-delete{
+    font-size: 1.5rem;
+    &:hover{
+        color:$error;
+    }
+}
+
+// capsule
+.capsule{
+    position: relative;
+    // border: 1px solid $pink-blue;
+    box-shadow: 0px 0px 2px 0px $dirty-white;
+    padding: 3px 6px;
+    font-size: 0.6rem;
+    border-radius:8px;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.2);
+    }
+    &__added{
+        background-color: $success;
+    }
+    &__btn{
+        position:absolute;
+        top:-8px;
+        right: -8px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        font-size: 1rem;
+        box-shadow: 0px 0px 2px 0px $dirty-white;
+        border-radius: 100%;
+        cursor: pointer;
+        transform: scale(0.8);
+        &--delete{
+            color:$error;
+        }
+        &--add{
+            color:$success;
+        }
+        &:hover{
+            transform: scale(1);
+        }
+    }
+    &__hide{
+        display: none;
+    }
+}
+
+//thumbnail
+.thumbnail{
+    position: relative;
+    // border: 1px solid $pink-blue;
+    box-shadow: 0px 0px 2px 0px $dirty-white;
+    padding: 3px 6px;
+    font-size: 0.6rem;
+    border-radius:8px;
+    cursor: pointer;
+    transform: scale(0.9);
+    &:hover{
+        transform: scale(1);
+    }
+    &>img{
+        width: 100%;
+        display:flex;
+        flex:1 1 auto;
+    }
+    &>imageName{
+        display: flex;
+        flex:1 1 40px;
+    }
+    &__added{
+        background-color: $success;
+    }
+    &__btn{
+        position:absolute;
+        top:-8px;
+        right: -8px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        font-size: 1rem;
+        box-shadow: 0px 0px 2px 0px $dirty-white;
+        border-radius: 100%;
+        cursor: pointer;
+        transform: scale(0.8);
+        &--delete{
+            color:$error;
+        }
+        &--add{
+            color:$success;
+        }
+        &:hover{
+            transform: scale(1);
+        }
+    }
+    &__hide{
+        display: none;
+    }
+}
